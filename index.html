@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script src="assets/js/jquery.geocomplete.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ramka"></div>
+        <div class="name">Weather Service</div>
+        <div class="ramka"></div>
+    </div>
+    <div class="menu">
+        <div class="forma">
+            <form action="" autocomplete="on">
+                <p>Your current location is:</p><input type="text" name="fname" placeholder="Your location" required><br />
+                <p id="location">Enable your geolocation!</p>
+                <p>Prefered temperature format</p>
+                <input type="radio" name="temp" checked="checked" id="radio1" value="cels"> <label for="radio1">Celsius(C&deg;)</label><br />
+                <input type="radio" name="temp" id="radio2" value="fahr"><label for="radio2">Fahrenheit(F&deg;)</label><br />
+            </form>
+        </div>
+        <div class="forecast">
+            <div class="backward"></div>
+            <div class="forward"></div> 
+            <div id="weather">
+                
+                <ul id="scroller">
+                    <!-- The forecast items will go here -->
+                </ul>  
+                            
+            </div>
+            
+            
+        </div>
+    </div>
+    <div class="footer">Have a nice day!</div>
+
+</body>
+</html>
