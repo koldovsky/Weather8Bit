@@ -6,10 +6,10 @@
     $('input[type=radio][name=temp]').click(function () {
         switch ($(this).val()) {
             case 'cels':
-                DEG = 'c'
+                DEG = 'c';
                 break;
             case 'fahr':
-                DEG = 'f'
+                DEG = 'f';
                 break;
         }
     });
@@ -30,10 +30,7 @@
 
     function locationSuccess(position) {
         scroller.empty();
-       
-
         try {
-
             // Retrive the cache
             var cache = localStorage.weatherCache && JSON.parse(localStorage.weatherCache);
 
@@ -73,12 +70,12 @@
             }
 
             else {
-                position.coords.latitude = result.geometry.location.lat();
-                position.coords.longitude = result.geometry.location.lng();
+                position.coords.latitude = position.geometry.location.lat();
+                position.coords.longitude = position.geometry.location.lng();
                 // If the cache is old or nonexistent, issue a new AJAX request
 
-                var weatherAPI = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + result.geometry.location.lat() +
-                                    '&lon=' + result.geometry.location.lng() + '&callback=?'
+                var weatherAPI = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + position.geometry.location.lat() +
+                                    '&lon=' + position.geometry.location.lng() + '&callback=?'
 
                 $.getJSON(weatherAPI, function (response) {
 
